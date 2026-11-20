@@ -112,9 +112,20 @@ def ig_post(ig_id, urls, testo):
     return chiama("POST", f"{ig_id}/media_publish", creation_id=c)["id"]
 
 
+def ig_reel(ig_id, url, testo):
+    c = chiama("POST", f"{ig_id}/media", media_type="REELS", video_url=url,
+               caption=testo, share_to_feed="true")["id"]
+    ig_attendi(c, secondi=600)
+    return chiama("POST", f"{ig_id}/media_publish", creation_id=c)["id"]
+
+
 def ig_storia(ig_id, url):
-    c = chiama("POST", f"{ig_id}/media", image_url=url, media_type="STORIES")["id"]
-    ig_attendi(c)
+    if url.lower().endswith(".mp4"):
+        c = chiama("POST", f"{ig_id}/media", video_url=url, media_type="STORIES")["id"]
+        ig_attendi(c, secondi=600)
+    else:
+        c = chiama("POST", f"{ig_id}/media", image_url=url, media_type="STORIES")["id"]
+        ig_attendi(c)
     return chiama("POST", f"{ig_id}/media_publish", creation_id=c)["id"]
 
 
@@ -130,6 +141,18 @@ def fb_post(page_id, urls, testo):
     for i, u in enumerate(urls[:10]):
         params[f"attached_media[{i}]"] = json.dumps({"media_fbid": fb_foto_nascosta(page_id, u)})
     return chiama("POST", f"{page_id}/feed", **params)["id"]
+
+
+def fb_reel(page_id, url, testo):
+    inizio = chiama("POST", f"{page_id}/video_reels", upload_phase="start")
+    video_id = inizio["video_id"]
+    r = requests.post(f"https://rupload.facebook.com/video-upload/{GRAPH_VERSION}/{video_id}",
+                      headers={"Authorization": f"OAuth {TOKEN}", "file_url": url}, timeout=300)
+    if r.status_code >= 300:
+        raise ErroreMeta(f"caricamento video Facebook: {r.text[:300]}")
+    chiama("POST", f"{page_id}/video_reels", upload_phase="finish", video_id=video_id,
+           video_state="PUBLISHED", description=testo)
+    return video_id
 
 
 def fb_storia(page_id, url):
@@ -172,18 +195,22 @@ def controlla_calendario(cal):
             orario(v)
         except Exception:
             problemi.append(f"{vid}: 'quando' deve essere AAAA-MM-GG HH:MM")
-        if v.get("tipo") not in ("post", "storia"):
-            problemi.append(f"{vid}: 'tipo' deve essere post o storia")
+        if v.get("tipo") not in ("post", "storia", "reel"):
+            problemi.append(f"{vid}: 'tipo' deve essere post, storia o reel")
         imm = v.get("immagini") or []
         if not imm:
             problemi.append(f"{vid}: nessuna immagine")
-        if v.get("tipo") == "storia" and len(imm) != 1:
-            problemi.append(f"{vid}: una storia vuole esattamente 1 immagine")
+        if v.get("tipo") in ("storia", "reel") and len(imm) != 1:
+            problemi.append(f"{vid}: una storia o un reel vuole esattamente 1 file")
+        if v.get("tipo") == "reel" and not all(n.lower().endswith(".mp4") for n in imm):
+            problemi.append(f"{vid}: il reel deve essere un video .mp4")
         if len(imm) > 10:
             problemi.append(f"{vid}: massimo 10 immagini")
         for n in imm:
-            if not n.lower().endswith((".jpg", ".jpeg")):
-                problemi.append(f"{vid}: {n} deve essere JPG")
+            if not n.lower().endswith((".jpg", ".jpeg", ".mp4")):
+                problemi.append(f"{vid}: {n} deve essere JPG (o MP4 per reel e storie video)")
+            if v.get("tipo") == "post" and n.lower().endswith(".mp4"):
+                problemi.append(f"{vid}: i post accettano solo immagini JPG (per i video usa tipo reel)")
             if not os.path.exists(os.path.join(MEDIA_DIR, n)):
                 problemi.append(f"{vid}: manca media/{n}")
         for c in v.get("canali", []):
@@ -198,7 +225,11 @@ def pubblica_voce(v, canale, page_id, ig_id):
     if canale == "instagram":
         if not ig_id:
             raise ErroreMeta("nessun account Instagram collegato alla Pagina")
+        if v["tipo"] == "reel":
+            return ig_reel(ig_id, urls[0], testo)
         return ig_post(ig_id, urls, testo) if v["tipo"] == "post" else ig_storia(ig_id, urls[0])
+    if v["tipo"] == "reel":
+        return fb_reel(page_id, urls[0], testo)
     return fb_post(page_id, urls, testo) if v["tipo"] == "post" else fb_storia(page_id, urls[0])
 
 

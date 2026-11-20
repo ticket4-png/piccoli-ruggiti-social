@@ -18,7 +18,8 @@ nessun browser automatico.
     "testo": "Didascalia con emoji e hashtag"
   }
   ```
-  `tipo` = `post` (da 1 a 10 immagini: con più immagini diventa un carosello) oppure `storia` (1 immagine).
+  `tipo` = `post` (da 1 a 10 immagini JPG: con più immagini diventa un carosello), `storia` (1 immagine JPG o 1 video MP4)
+  oppure `reel` (1 video MP4 verticale 1080x1920, 5-90 secondi; su Instagram compare anche nel feed).
 - `stato.json` — scritto dal bot: cosa è stato pubblicato, quando, eventuali errori.
   Un contenuto non va mai pubblicato due volte. Se GitHub resta fermo più di 6 ore, il contenuto viene saltato.
   Dopo 3 tentativi falliti il contenuto viene segnato "fallito" e GitHub ti manda un'email.
@@ -28,8 +29,9 @@ nessun browser automatico.
    Casi d'uso: gestione della Pagina e "Gestisci messaggi e contenuti su Instagram" (API Instagram con login Facebook).
    L'app resta in modalità sviluppo: per le tue Pagine e i tuoi account non serve la revisione di Meta.
 2. **Token**: in Strumenti → Graph API Explorer scegli l'app, poi "Get User Access Token" con i permessi
-   `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`,
-   `instagram_content_publish`, `business_management`. Nel login seleziona SOLO la Pagina Piccoli Ruggiti
+   `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `pages_manage_engagement`,
+   `pages_read_user_content`, `read_insights`, `instagram_basic`, `instagram_content_publish`,
+   `instagram_manage_comments`, `instagram_manage_insights`, `business_management`. Nel login seleziona SOLO la Pagina Piccoli Ruggiti
    e l'account Instagram piccoliruggiti.
 3. **Token senza scadenza**: copia il token nel Debugger dei token di accesso → "Estendi token di accesso".
    Rimetti il token esteso nel Graph API Explorer ed esegui `me/accounts`: copia l'`access_token` della
@@ -40,3 +42,7 @@ nessun browser automatico.
    Nel log devono comparire la Pagina, @piccoliruggiti e "Immagine di prova raggiungibile: True".
 
 Il token non va mai scritto nei file o nei messaggi: solo nei Secrets di GitHub.
+
+## Statistiche
+Il workflow "Statistiche social" gira ogni sera e salva `statistiche/ultimo.json` (follower, like, commenti,
+copertura e visualizzazioni dei post Instagram, metriche della Pagina Facebook) e `statistiche/storico.csv`.

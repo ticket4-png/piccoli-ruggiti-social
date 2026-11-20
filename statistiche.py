@@ -51,8 +51,26 @@ def main():
             "condivisioni": (p.get("shares") or {}).get("count", 0),
             "link": p.get("permalink_url"),
         })
-    fb_insight = prova(avvisi, "insights pagina (serve read_insights)", lambda: chiama(
-        "GET", f"{page_id}/insights", metric="page_impressions_unique,page_post_engagements", period="day"))
+    # Meta cambia spesso i nomi delle metriche: si prova ognuna da sola e si tengono quelle valide
+    fb_insight = {}
+    for metrica in ("page_media_view", "page_views_total", "page_post_engagements",
+                    "page_follows", "page_daily_follows_unique", "page_impressions_unique"):
+        try:
+            r = chiama("GET", f"{page_id}/insights", metric=metrica, period="day")
+            for x in r.get("data", []):
+                fb_insight[x["name"]] = [v.get("value") for v in x.get("values", [])]
+        except ErroreMeta:
+            pass
+    if not fb_insight:
+        avvisi.append("insights pagina facebook: nessuna metrica disponibile")
+    for voce, p in zip(fb_post, post_fb.get("data", [])):
+        for metrica in ("post_media_view", "post_impressions_unique", "post_clicks"):
+            try:
+                r = chiama("GET", f"{p['id']}/insights", metric=metrica)
+                for x in r.get("data", []):
+                    voce[x["name"]] = (x.get("values") or [{}])[0].get("value")
+            except ErroreMeta:
+                pass
 
     # ---- Instagram
     profilo = {}
@@ -91,7 +109,7 @@ def main():
             "pagina": pagina.get("name") or nome,
             "follower": pagina.get("followers_count"),
             "mi_piace": pagina.get("fan_count"),
-            "insights": fb_insight.get("data") if fb_insight else None,
+            "insights": fb_insight or None,
             "post": fb_post,
         },
         "instagram": {
