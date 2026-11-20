@@ -1,0 +1,42 @@
+# Piccoli Ruggiti – post e storie automatici
+
+Pubblica da solo, agli orari del calendario, post (anche caroselli) e storie sulla
+Pagina Facebook **Piccoli Ruggiti** e su Instagram **@piccoliruggiti**, usando le API
+ufficiali di Meta. Gira gratis su GitHub Actions ogni 15 minuti: nessun PC acceso,
+nessun browser automatico.
+
+## Come funziona
+- `media/` — le immagini (JPG; post 1080x1350, storie 1080x1920).
+- `calendario.json` — cosa pubblicare e quando (ora italiana):
+  ```json
+  {
+    "id": "2026-11-23-post-black-friday",
+    "quando": "2026-11-23 12:45",
+    "tipo": "post",
+    "canali": ["instagram", "facebook"],
+    "immagini": ["bf-1.jpg", "bf-2.jpg"],
+    "testo": "Didascalia con emoji e hashtag"
+  }
+  ```
+  `tipo` = `post` (da 1 a 10 immagini: con più immagini diventa un carosello) oppure `storia` (1 immagine).
+- `stato.json` — scritto dal bot: cosa è stato pubblicato, quando, eventuali errori.
+  Un contenuto non va mai pubblicato due volte. Se GitHub resta fermo più di 6 ore, il contenuto viene saltato.
+  Dopo 3 tentativi falliti il contenuto viene segnato "fallito" e GitHub ti manda un'email.
+
+## Configurazione (una volta sola)
+1. **App Meta**: su developers.facebook.com → Le mie app → Crea app → "Piccoli Ruggiti Publisher".
+   Casi d'uso: gestione della Pagina e "Gestisci messaggi e contenuti su Instagram" (API Instagram con login Facebook).
+   L'app resta in modalità sviluppo: per le tue Pagine e i tuoi account non serve la revisione di Meta.
+2. **Token**: in Strumenti → Graph API Explorer scegli l'app, poi "Get User Access Token" con i permessi
+   `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`,
+   `instagram_content_publish`, `business_management`. Nel login seleziona SOLO la Pagina Piccoli Ruggiti
+   e l'account Instagram piccoliruggiti.
+3. **Token senza scadenza**: copia il token nel Debugger dei token di accesso → "Estendi token di accesso".
+   Rimetti il token esteso nel Graph API Explorer ed esegui `me/accounts`: copia l'`access_token` della
+   Pagina Piccoli Ruggiti. Ricontrollato nel Debugger, deve risultare "Scade: Mai".
+4. **GitHub**: Settings → Secrets and variables → Actions → New repository secret
+   `META_PAGE_TOKEN` = il token della Pagina. (Facoltativo: `META_PAGE_ID`.)
+5. **Prova**: Actions → "Pubblica post e storie" → Run workflow con "Solo verifica" spuntato.
+   Nel log devono comparire la Pagina, @piccoliruggiti e "Immagine di prova raggiungibile: True".
+
+Il token non va mai scritto nei file o nei messaggi: solo nei Secrets di GitHub.

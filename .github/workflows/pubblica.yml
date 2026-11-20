@@ -1,0 +1,58 @@
+name: Pubblica post e storie
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # ogni 15 minuti (GitHub a volte ritarda di qualche minuto)
+  workflow_dispatch:
+    inputs:
+      verifica:
+        description: "Solo verifica (non pubblica nulla)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pubblica
+  cancel-in-progress: false
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Pubblica
+        env:
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          MEDIA_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/media
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.verifica }}" = "true" ]; then
+            python pubblica.py --verifica
+          else
+            python pubblica.py
+          fi
+
+      - name: Salva stato
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain stato.json)" ]; then
+            git config user.name "piccoli-ruggiti-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add stato.json
+            git commit -m "stato pubblicazioni $(TZ=Europe/Rome date '+%d/%m %H:%M')"
+            for i in 1 2 3; do
+              git pull --rebase -X theirs && git push && break
+              sleep 5
+            done
+          fi
