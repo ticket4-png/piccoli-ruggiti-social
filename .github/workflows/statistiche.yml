@@ -37,6 +37,7 @@ jobs:
         if: always()
         env:
           GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+          DEVELOPER_EMAIL: ${{ secrets.DEVELOPER_EMAIL }}
         run: python statistiche_google.py
 
       - name: Salva
