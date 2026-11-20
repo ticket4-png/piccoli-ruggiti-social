@@ -1,0 +1,170 @@
+{
+ "aggiornato": "2026-11-21T00:48+01:00",
+ "avvisi": [
+  "merchant: HTTP 401: GCP project with id piccoli-ruggiti-statistiche and number 677790877141 is not registered with the merchant account. Please follow these steps https://developers.google.com/merchant/api/guides/quickstart/direct-api-calls#step_1_register_as_a_developer to register the GCP project with the m"
+ ],
+ "analytics": {
+  "per_giorno": [
+   {
+    "date": "20261118",
+    "activeUsers": 3,
+    "sessions": 3,
+    "screenPageViews": 44
+   },
+   {
+    "date": "20261119",
+    "activeUsers": 1,
+    "sessions": 1,
+    "screenPageViews": 4
+   },
+   {
+    "date": "20261120",
+    "activeUsers": 2,
+    "sessions": 2,
+    "screenPageViews": 8
+   }
+  ],
+  "sorgenti_7g": [
+   {
+    "sessionSourceMedium": "(direct) / (none)",
+    "sessions": 6,
+    "activeUsers": 3
+   }
+  ],
+  "citta_7g": [
+   {
+    "city": "Rome",
+    "activeUsers": 2
+   },
+   {
+    "city": "",
+    "activeUsers": 1
+   },
+   {
+    "city": "Milan",
+    "activeUsers": 1
+   },
+   {
+    "city": "Salerno",
+    "activeUsers": 1
+   }
+  ],
+  "dispositivi_7g": [
+   {
+    "deviceCategory": "desktop",
+    "activeUsers": 3
+   }
+  ],
+  "pagine_7g": [
+   {
+    "pageTitle": "Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 28
+   },
+   {
+    "pageTitle": "tracking iframe for shop 1597242",
+    "screenPageViews": 12
+   },
+   {
+    "pageTitle": "My First Christmas 2026 – Baby's First Christmas Body ecologico per neonato a manica lunga | Spreadshop",
+    "screenPageViews": 5
+   },
+   {
+    "pageTitle": "Adesivi | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 2
+   },
+   {
+    "pageTitle": "Bambini e neonati | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 2
+   },
+   {
+    "pageTitle": "Casa & Vita | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 2
+   },
+   {
+    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Sticker formato S (10 x 10 cm) | Spreadshop",
+    "screenPageViews": 2
+   },
+   {
+    "pageTitle": "Design Tool | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 1
+   },
+   {
+    "pageTitle": "Prodotti per bambini | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 1
+   },
+   {
+    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Body Premium a maniche corte per neonati | Spreadshop",
+    "screenPageViews": 1
+   }
+  ],
+  "eventi_7g": [
+   {
+    "eventName": "page_view",
+    "eventCount": 56
+   },
+   {
+    "eventName": "view_item",
+    "eventCount": 8
+   },
+   {
+    "eventName": "scroll",
+    "eventCount": 7
+   },
+   {
+    "eventName": "view_item_list",
+    "eventCount": 7
+   },
+   {
+    "eventName": "session_start",
+    "eventCount": 6
+   },
+   {
+    "eventName": "select_content",
+    "eventCount": 4
+   },
+   {
+    "eventName": "first_visit",
+    "eventCount": 3
+   }
+  ]
+ },
+ "search_console": {
+  "totale_28g": {
+   "clicks": 0,
+   "impressions": 0,
+   "ctr": 0,
+   "position": 0
+  },
+  "per_giorno": [
+   {
+    "keys": [
+     "2026-11-17"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-18"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+   }
+  ],
+  "query": [],
+  "pagine": [],
+  "home_indicizzazione": {
+   "verdict": "PASS",
+   "coverageState": "Inviata e indicizzata",
+   "robotsTxtState": "ALLOWED",
+   "indexingState": "INDEXING_ALLOWED",
+   "lastCrawlTime": "2026-11-20T23:17:35Z",
+   "pageFetchState": "SUCCESSFUL"
+  }
+ },
+ "merchant": null
+}
