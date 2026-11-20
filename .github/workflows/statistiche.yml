@@ -1,0 +1,47 @@
+name: Statistiche social
+
+on:
+  schedule:
+    - cron: "17 20 * * *"   # ogni sera (21:17 ora italiana d'inverno, 22:17 d'estate)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pubblica
+  cancel-in-progress: false
+
+jobs:
+  statistiche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Leggi statistiche
+        env:
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          MEDIA_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/media
+        run: python statistiche.py
+
+      - name: Salva
+        run: |
+          if [ -n "$(git status --porcelain statistiche)" ]; then
+            git config user.name "piccoli-ruggiti-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add statistiche
+            git commit -m "statistiche $(TZ=Europe/Rome date '+%d/%m')"
+            for i in 1 2 3; do
+              git pull --rebase -X theirs && git push && break
+              sleep 5
+            done
+          fi
