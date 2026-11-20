@@ -143,8 +143,26 @@ def merchant_query(g, query):
     return righe
 
 
+def registra_merchant(g):
+    """Registra una volta il progetto Google Cloud presso Merchant Center (richiesto dalla Merchant API).
+    Serve che in quel momento l'account di servizio sia Amministratore di Merchant Center.
+    Come email del contatto tecnico usa DEVELOPER_EMAIL se impostata, altrimenti l'account di servizio."""
+    url = (f"https://merchantapi.googleapis.com/accounts/v1/accounts/{MERCHANT_ID}"
+           "/developerRegistration:registerGcp")
+    email = os.environ.get("DEVELOPER_EMAIL", "").strip() or g.cred.service_account_email
+    return g.chiama("POST", url, {"developerEmail": email})
+
+
 def merchant(g):
     out = {}
+    try:
+        merchant_query(g, "SELECT offer_id FROM product_view LIMIT 1")
+    except RuntimeError as e:
+        if "not registered" in str(e):
+            print("Merchant: progetto non registrato, provo a registrarlo...")
+            print("registerGcp:", str(registra_merchant(g))[:300])
+        else:
+            raise
     prodotti = merchant_query(g, "SELECT offer_id, title, aggregated_reporting_context_status, item_issues "
                                  "FROM product_view")
     stati = Counter()
