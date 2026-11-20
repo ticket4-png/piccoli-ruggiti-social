@@ -1,10 +1,31 @@
 {
- "aggiornato": "2026-11-20T23:48+01:00",
+ "aggiornato": "2026-11-20T23:50+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
-  "insights": null,
+  "insights": {
+   "page_media_view": [
+    0,
+    34
+   ],
+   "page_views_total": [
+    0,
+    0
+   ],
+   "page_post_engagements": [
+    0,
+    0
+   ],
+   "page_follows": [
+    0,
+    0
+   ],
+   "page_daily_follows_unique": [
+    0,
+    0
+   ]
+  },
   "post": [
    {
     "data": "2026-11-20T17:45:03+0000",
@@ -12,7 +33,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/122107268355547312"
+    "link": "https://www.facebook.com/122107463697547312/posts/122107268355547312",
+    "post_media_view": 0,
+    "post_clicks": 0
    },
    {
     "data": "2026-11-19T11:45:02+0000",
@@ -20,7 +43,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/122105954343547312"
+    "link": "https://www.facebook.com/122107463697547312/posts/122105954343547312",
+    "post_media_view": 8,
+    "post_clicks": 0
    },
    {
     "data": "2026-11-18T18:32:31+0000",
@@ -28,7 +53,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/1476028767961265?substory_index=1476028767961265"
+    "link": "https://www.facebook.com/122107463697547312/posts/1476028767961265?substory_index=1476028767961265",
+    "post_media_view": 19,
+    "post_clicks": 0
    },
    {
     "data": "2026-11-18T18:26:54+0000",
@@ -36,7 +63,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/122105354679547312?substory_index=1514383597220926"
+    "link": "https://www.facebook.com/122107463697547312/posts/122105354679547312?substory_index=1514383597220926",
+    "post_media_view": 9,
+    "post_clicks": 0
    },
    {
     "data": "2026-11-18T14:21:20+0000",
@@ -44,7 +73,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/122105187123547312"
+    "link": "https://www.facebook.com/122107463697547312/posts/122105187123547312",
+    "post_media_view": 12,
+    "post_clicks": 0
    },
    {
     "data": "2026-11-18T14:11:01+0000",
@@ -52,7 +83,9 @@
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
-    "link": "https://www.facebook.com/122107463697547312/posts/122105180085547312?substory_index=1162124439503009"
+    "link": "https://www.facebook.com/122107463697547312/posts/122105180085547312?substory_index=1162124439503009",
+    "post_media_view": 8,
+    "post_clicks": 0
    }
   ]
  },
@@ -100,7 +133,5 @@
    }
   ]
  },
- "avvisi": [
-  "insights pagina (serve read_insights): (#100) The value must be a valid insights metric (codice 100/None)"
- ]
+ "avvisi": []
 }
