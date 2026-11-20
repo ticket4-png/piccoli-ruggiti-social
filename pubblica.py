@@ -9,7 +9,7 @@ annota l'esito in stato.json (che il workflow salva nel repository).
 Variabili d'ambiente (segreti GitHub):
   META_PAGE_TOKEN   token della Pagina Facebook "Piccoli Ruggiti" (senza scadenza)
   META_PAGE_ID      (facoltativo) ID della Pagina; se manca viene letto dal token
-  GRAPH_VERSION     (facoltativo) versione Graph API, predefinita v23.0
+  GRAPH_VERSION     (facoltativo) versione Graph API, predefinita v27.0
   MEDIA_BASE_URL    URL pubblico della cartella media/ (impostato dal workflow)
 Modalità:
   python pubblica.py            -> pubblica i contenuti scaduti
@@ -30,7 +30,7 @@ CALENDARIO = os.path.join(QUI, "calendario.json")
 STATO = os.path.join(QUI, "stato.json")
 MEDIA_DIR = os.path.join(QUI, "media")
 
-GRAPH_VERSION = os.environ.get("GRAPH_VERSION", "v23.0").strip() or "v23.0"
+GRAPH_VERSION = os.environ.get("GRAPH_VERSION", "v27.0").strip() or "v27.0"
 GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
 TOKEN = os.environ.get("META_PAGE_TOKEN", "").strip()
 MEDIA_BASE_URL = os.environ.get("MEDIA_BASE_URL", "").rstrip("/")
