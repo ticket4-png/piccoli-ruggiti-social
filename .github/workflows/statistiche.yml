@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests
+      - run: pip install requests google-auth
 
       - name: Leggi statistiche
         env:
@@ -33,7 +33,14 @@ jobs:
           MEDIA_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/media
         run: python statistiche.py
 
+      - name: Statistiche Google (Analytics, Search Console, Merchant)
+        if: always()
+        env:
+          GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+        run: python statistiche_google.py
+
       - name: Salva
+        if: always()
         run: |
           if [ -n "$(git status --porcelain statistiche)" ]; then
             git config user.name "piccoli-ruggiti-bot"
