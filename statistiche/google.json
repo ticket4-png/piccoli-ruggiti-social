@@ -1,7 +1,7 @@
 {
- "aggiornato": "2026-11-21T00:52+01:00",
+ "aggiornato": "2026-11-21T00:54+01:00",
  "avvisi": [
-  "merchant: HTTP 403: GCP registration is not allowed for service accounts. Please use a human user account."
+  "merchant: HTTP 401: GCP project with id piccoli-ruggiti-statistiche and number 677790877141 is not registered with the merchant account. Please follow these steps https://developers.google.com/merchant/api/guides/quickstart/direct-api-calls#step_1_register_as_a_developer to register the GCP project with the m"
  ],
  "analytics": {
   "per_giorno": [
