@@ -1,7 +1,7 @@
 {
- "aggiornato": "2026-11-21T00:54+01:00",
+ "aggiornato": "2026-11-21T21:46+01:00",
  "avvisi": [
-  "merchant: HTTP 401: GCP project with id piccoli-ruggiti-statistiche and number 677790877141 is not registered with the merchant account. Please follow these steps https://developers.google.com/merchant/api/guides/quickstart/direct-api-calls#step_1_register_as_a_developer to register the GCP project with the m"
+  "merchant: HTTP 400: [query] Error in query: query from table 'product_view' is expected to have any of ['product_view.id', PRODUCTS_COUNT] fields in SELECT clause"
  ],
  "analytics": {
   "per_giorno": [
@@ -37,7 +37,7 @@
     "activeUsers": 2
    },
    {
-    "city": "",
+    "city": "(not set)",
     "activeUsers": 1
    },
    {
@@ -148,6 +148,15 @@
    {
     "keys": [
      "2026-11-18"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-19"
     ],
     "clicks": 0,
     "impressions": 0,

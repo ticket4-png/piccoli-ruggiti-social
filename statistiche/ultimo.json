@@ -1,13 +1,13 @@
 {
- "aggiornato": "2026-11-21T00:54+01:00",
+ "aggiornato": "2026-11-21T21:45+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    0,
-    34
+    34,
+    19
    ],
    "page_views_total": [
     0,
@@ -28,13 +28,23 @@
   },
   "post": [
    {
+    "data": "2026-11-21T11:45:03+0000",
+    "testo": "🦁 -25% su tutto il negozio Piccoli Ruggiti fino al 30 novembre!\n\nBody, magliette",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/122107463697547312/posts/122108020851547312",
+    "post_media_view": 5,
+    "post_clicks": 0
+   },
+   {
     "data": "2026-11-20T17:45:03+0000",
     "testo": "Sta arrivando un fratellino o una sorellina? 💛\n\nIl modo più dolce per dare la no",
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122107268355547312",
-    "post_media_view": 0,
+    "post_media_view": 11,
     "post_clicks": 0
    },
    {
@@ -44,7 +54,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105954343547312",
-    "post_media_view": 8,
+    "post_media_view": 15,
     "post_clicks": 0
    },
    {
@@ -54,7 +64,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/1476028767961265?substory_index=1476028767961265",
-    "post_media_view": 19,
+    "post_media_view": 23,
     "post_clicks": 0
    },
    {
@@ -64,7 +74,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105354679547312?substory_index=1514383597220926",
-    "post_media_view": 9,
+    "post_media_view": 11,
     "post_clicks": 0
    },
    {
@@ -74,7 +84,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105187123547312",
-    "post_media_view": 12,
+    "post_media_view": 14,
     "post_clicks": 0
    },
    {
@@ -84,7 +94,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105180085547312?substory_index=1162124439503009",
-    "post_media_view": 8,
+    "post_media_view": 9,
     "post_clicks": 0
    }
   ]
@@ -93,8 +103,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 3,
+  "post_totali": 4,
   "post": [
+   {
+    "data": "2026-11-21T11:45:05+0000",
+    "tipo": "FEED",
+    "testo": "🦁 -25% su tutto il negozio Piccoli Ruggiti fino al 30 novembre!\n\nBody, magliette",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/p/DgAJ0QRwu3K/",
+    "reach": 2,
+    "saved": 0,
+    "shares": 0,
+    "views": 8
+   },
    {
     "data": "2026-11-20T17:45:07+0000",
     "tipo": "FEED",
@@ -102,10 +124,10 @@
     "like": 0,
     "commenti": 0,
     "link": "https://www.instagram.com/p/Df-OOXAhuky/",
-    "reach": 1,
+    "reach": 2,
     "saved": 0,
     "shares": 0,
-    "views": 2
+    "views": 5
    },
    {
     "data": "2026-11-19T11:45:06+0000",
@@ -114,10 +136,10 @@
     "like": 0,
     "commenti": 0,
     "link": "https://www.instagram.com/p/Df7AOrMBjrA/",
-    "reach": 2,
+    "reach": 3,
     "saved": 0,
     "shares": 0,
-    "views": 5
+    "views": 7
    },
    {
     "data": "2026-11-18T14:04:49+0000",
@@ -126,10 +148,10 @@
     "like": 0,
     "commenti": 0,
     "link": "https://www.instagram.com/p/Df4rbFpgvCF/",
-    "reach": 1,
+    "reach": 2,
     "saved": 0,
     "shares": 0,
-    "views": 2
+    "views": 4
    }
   ]
  },
