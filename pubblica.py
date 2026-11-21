@@ -14,9 +14,14 @@ Variabili d'ambiente (segreti GitHub):
 Modalità:
   python pubblica.py            -> pubblica i contenuti scaduti
   python pubblica.py --verifica -> controlla token, pagina, account Instagram e calendario, non pubblica nulla
+  python pubblica.py --continua -> pubblica i contenuti scaduti, poi resta in attesa (fino a ~5 h 20 min)
+                                   e pubblica i successivi all'orario esatto; salva stato.json con git dopo
+                                   ogni pubblicazione. Il workflow poi rilancia se stesso, così non dipende
+                                   dal cron di GitHub (che a volte parte solo ogni 7-8 ore).
 """
 import json
 import os
+import subprocess
 import sys
 import time
 from datetime import datetime, timedelta
@@ -37,6 +42,7 @@ MEDIA_BASE_URL = os.environ.get("MEDIA_BASE_URL", "").rstrip("/")
 
 RITARDO_MASSIMO = timedelta(hours=12)  # GitHub lancia il cron anche ogni 7-8 h; oltre questo ritardo un contenuto non viene più pubblicato
 TENTATIVI_MASSIMI = 3                  # tentativi (uno per esecuzione) prima di arrendersi
+DURATA_MASSIMA = timedelta(hours=5, minutes=20)  # modalità --continua: GitHub ferma un job dopo 6 h
 
 
 class ErroreMeta(Exception):
@@ -268,6 +274,91 @@ def main():
         print("Verifica completata: nessun contenuto pubblicato.")
         return 1 if problemi else 0
 
+    if "--continua" not in sys.argv:
+        return passaggio(cal, stato, problemi, page_id, ig_id)
+
+    inizio = datetime.now(ROMA)
+    ko = passaggio(cal, stato, problemi, page_id, ig_id)
+    salva_git()
+    while True:
+        aggiorna_git()
+        cal = carica(CALENDARIO, [])
+        stato = carica(STATO, {})
+        problemi = controlla_calendario(cal)
+        prossimo = prossima_uscita(cal, stato, problemi)
+        if prossimo is None:
+            print("Nessun altro contenuto in programma: fine.")
+            break
+        fine = inizio + DURATA_MASSIMA
+        if prossimo > fine:
+            resta = (fine - datetime.now(ROMA)).total_seconds()
+            print(f"Prossimo contenuto alle {prossimo:%d/%m %H:%M}: attendo fino a fine job ({resta/60:.0f} min), poi rilancio.", flush=True)
+            if resta > 0:
+                time.sleep(resta)
+            break
+        attesa = (prossimo - datetime.now(ROMA)).total_seconds()
+        if attesa > 0:
+            print(f"Attendo fino alle {prossimo:%d/%m %H:%M} ({attesa/60:.0f} min)...", flush=True)
+            time.sleep(attesa + 5)
+        aggiorna_git()
+        cal = carica(CALENDARIO, [])
+        stato = carica(STATO, {})
+        problemi = controlla_calendario(cal)
+        ko += passaggio(cal, stato, problemi, page_id, ig_id)
+        salva_git()
+    with open(os.path.join(QUI, ".rilancia"), "w") as f:
+        f.write("si" if prossima_uscita(cal, stato, problemi) else "no")
+    return 1 if ko else 0
+
+
+def da_fare(v, stato):
+    return [c for c in v.get("canali", [])
+            if stato.get(v["id"], {}).get(c, {}).get("esito") not in ("pubblicato", "saltato", "fallito")]
+
+
+def prossima_uscita(cal, stato, problemi):
+    """Orario del prossimo contenuto ancora da pubblicare (anche già scaduto, se ha tentativi residui)."""
+    esclusi = {p.split(":")[0] for p in problemi}
+    orari = [orario(v) for v in cal if v["id"] not in esclusi and da_fare(v, stato)]
+    if not orari:
+        return None
+    adesso = datetime.now(ROMA)
+    futuri = [o for o in orari if o > adesso]
+    if len(futuri) < len(orari):          # ci sono voci scadute da ritentare: riprova tra 15 minuti
+        return adesso + timedelta(minutes=15)
+    return min(futuri)
+
+
+def git(*args):
+    return subprocess.run(["git", *args], cwd=QUI, capture_output=True, text=True)
+
+
+def aggiorna_git():
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    git("stash")
+    r = git("pull", "--rebase", "-X", "theirs")
+    git("stash", "pop")
+    if r.returncode:
+        print("git pull non riuscito:", r.stderr[:300])
+
+
+def salva_git():
+    if os.environ.get("GITHUB_ACTIONS") != "true" or not git("status", "--porcelain", "stato.json").stdout.strip():
+        return
+    git("config", "user.name", "piccoli-ruggiti-bot")
+    git("config", "user.email", "bot@users.noreply.github.com")
+    git("add", "stato.json")
+    git("commit", "-m", f"stato pubblicazioni {datetime.now(ROMA):%d/%m %H:%M}")
+    for _ in range(3):
+        if git("pull", "--rebase", "-X", "theirs").returncode == 0 and git("push").returncode == 0:
+            return
+        time.sleep(5)
+    print("ATTENZIONE: stato.json non salvato su GitHub")
+
+
+def passaggio(cal, stato, problemi, page_id, ig_id):
+    adesso = datetime.now(ROMA)
     ko = 0
     for v in sorted(cal, key=orario):
         if v["id"] in {p.split(":")[0] for p in problemi}:

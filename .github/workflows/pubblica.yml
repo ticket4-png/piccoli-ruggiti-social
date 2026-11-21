@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write     # per rilanciare se stesso (catena di attesa)
 
 concurrency:
   group: pubblica
@@ -20,7 +21,7 @@ concurrency:
 jobs:
   pubblica:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 350   # in modalità continua resta acceso fino a ~5 h 20 min
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +41,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.verifica }}" = "true" ]; then
             python pubblica.py --verifica
           else
-            python pubblica.py
+            python pubblica.py --continua
           fi
 
       - name: Salva stato
@@ -55,4 +56,16 @@ jobs:
               git pull --rebase -X theirs && git push && break
               sleep 5
             done
+          fi
+
+      - name: Rilancia (resta in attesa del prossimo contenuto)
+        if: always() && hashFiles('.rilancia') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(cat .rilancia)" = "si" ]; then
+            gh workflow run pubblica.yml --ref "${{ github.ref_name }}" -f verifica=false
+            echo "Rilanciato."
+          else
+            echo "Calendario vuoto: niente rilancio (riparte il cron quando servirà)."
           fi

@@ -46,3 +46,10 @@ Il token non va mai scritto nei file o nei messaggi: solo nei Secrets di GitHub.
 ## Statistiche
 Il workflow "Statistiche social" gira ogni sera e salva `statistiche/ultimo.json` (follower, like, commenti,
 copertura e visualizzazioni dei post Instagram, metriche della Pagina Facebook) e `statistiche/storico.csv`.
+
+### Orari precisi (dal 22/11/2026)
+Il cron di GitHub "ogni 15 minuti" in pratica parte anche solo ogni 7-8 ore. Per questo il workflow gira in
+modalità `--continua`: pubblica ciò che è scaduto, poi resta acceso (fino a ~5 h 20 min) aspettando l'orario
+esatto del contenuto successivo, salva stato.json dopo ogni pubblicazione e alla fine rilancia se stesso
+(con il token automatico di GitHub). Quando il calendario non ha più contenuti futuri si ferma; il cron lo
+riaccende la volta dopo. Il cron resta come riserva.
