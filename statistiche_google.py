@@ -156,14 +156,14 @@ def registra_merchant(g):
 def merchant(g):
     out = {}
     try:
-        merchant_query(g, "SELECT offer_id FROM product_view LIMIT 1")
+        merchant_query(g, "SELECT id, offer_id FROM product_view LIMIT 1")
     except RuntimeError as e:
         if "not registered" in str(e):
             print("Merchant: progetto non registrato, provo a registrarlo...")
             print("registerGcp:", str(registra_merchant(g))[:300])
         else:
             raise
-    prodotti = merchant_query(g, "SELECT offer_id, title, aggregated_reporting_context_status, item_issues "
+    prodotti = merchant_query(g, "SELECT id, offer_id, title, aggregated_reporting_context_status, item_issues "
                                  "FROM product_view")
     stati = Counter()
     problemi = Counter()
