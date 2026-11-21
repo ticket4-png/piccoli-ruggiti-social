@@ -39,6 +39,8 @@ GRAPH_VERSION = os.environ.get("GRAPH_VERSION", "v27.0").strip() or "v27.0"
 GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
 TOKEN = os.environ.get("META_PAGE_TOKEN", "").strip()
 MEDIA_BASE_URL = os.environ.get("MEDIA_BASE_URL", "").rstrip("/")
+# i video da GitHub Pages (tipo video/mp4); raw.githubusercontent li serve come application/octet-stream
+MEDIA_VIDEO_BASE_URL = os.environ.get("MEDIA_VIDEO_BASE_URL", "").rstrip("/")
 
 RITARDO_MASSIMO = timedelta(hours=12)  # GitHub lancia il cron anche ogni 7-8 h; oltre questo ritardo un contenuto non viene più pubblicato
 TENTATIVI_MASSIMI = 3                  # tentativi (uno per esecuzione) prima di arrendersi
@@ -186,6 +188,8 @@ def orario(voce):
 
 
 def url_media(nome):
+    if nome.lower().endswith(".mp4") and MEDIA_VIDEO_BASE_URL:
+        return f"{MEDIA_VIDEO_BASE_URL}/{nome}"
     return f"{MEDIA_BASE_URL}/{nome}"
 
 
