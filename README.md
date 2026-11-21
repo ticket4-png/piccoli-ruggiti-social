@@ -21,7 +21,7 @@ nessun browser automatico.
   `tipo` = `post` (da 1 a 10 immagini JPG: con più immagini diventa un carosello), `storia` (1 immagine JPG o 1 video MP4)
   oppure `reel` (1 video MP4 verticale 1080x1920, 5-90 secondi; su Instagram compare anche nel feed).
 - `stato.json` — scritto dal bot: cosa è stato pubblicato, quando, eventuali errori.
-  Un contenuto non va mai pubblicato due volte. Se GitHub resta fermo più di 6 ore, il contenuto viene saltato.
+  Un contenuto non va mai pubblicato due volte. Se GitHub resta fermo più di 12 ore, il contenuto viene saltato (il 21/11 il cron "ogni 15 minuti" è partito solo 3 volte in 24 h, a 7-8 ore di distanza).
   Dopo 3 tentativi falliti il contenuto viene segnato "fallito" e GitHub ti manda un'email.
 
 ## Configurazione (una volta sola)

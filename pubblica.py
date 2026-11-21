@@ -35,7 +35,7 @@ GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
 TOKEN = os.environ.get("META_PAGE_TOKEN", "").strip()
 MEDIA_BASE_URL = os.environ.get("MEDIA_BASE_URL", "").rstrip("/")
 
-RITARDO_MASSIMO = timedelta(hours=6)   # oltre questo ritardo un contenuto non viene più pubblicato
+RITARDO_MASSIMO = timedelta(hours=12)  # GitHub lancia il cron anche ogni 7-8 h; oltre questo ritardo un contenuto non viene più pubblicato
 TENTATIVI_MASSIMI = 3                  # tentativi (uno per esecuzione) prima di arrendersi
 
 
