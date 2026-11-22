@@ -1,8 +1,6 @@
 {
- "aggiornato": "2026-11-21T21:46+01:00",
- "avvisi": [
-  "merchant: HTTP 400: [query] Error in query: query from table 'product_view' is expected to have any of ['product_view.id', PRODUCTS_COUNT] fields in SELECT clause"
- ],
+ "aggiornato": "2026-11-22T21:45+01:00",
+ "avvisi": [],
  "analytics": {
   "per_giorno": [
    {
@@ -22,12 +20,24 @@
     "activeUsers": 2,
     "sessions": 2,
     "screenPageViews": 8
+   },
+   {
+    "date": "20261121",
+    "activeUsers": 0,
+    "sessions": 1,
+    "screenPageViews": 1
+   },
+   {
+    "date": "20261122",
+    "activeUsers": 1,
+    "sessions": 1,
+    "screenPageViews": 13
    }
   ],
   "sorgenti_7g": [
    {
     "sessionSourceMedium": "(direct) / (none)",
-    "sessions": 6,
+    "sessions": 8,
     "activeUsers": 3
    }
   ],
@@ -35,6 +45,10 @@
    {
     "city": "Rome",
     "activeUsers": 2
+   },
+   {
+    "city": "",
+    "activeUsers": 1
    },
    {
     "city": "(not set)",
@@ -58,15 +72,19 @@
   "pagine_7g": [
    {
     "pageTitle": "Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 28
+    "screenPageViews": 30
    },
    {
     "pageTitle": "tracking iframe for shop 1597242",
-    "screenPageViews": 12
+    "screenPageViews": 17
    },
    {
     "pageTitle": "My First Christmas 2026 – Baby's First Christmas Body ecologico per neonato a manica lunga | Spreadshop",
     "screenPageViews": 5
+   },
+   {
+    "pageTitle": "Mamma di Maschi – Modalità Sopravvivenza ON Felpa unisex | Spreadshop",
+    "screenPageViews": 3
    },
    {
     "pageTitle": "Adesivi | Piccoli Ruggiti | Spreadshop",
@@ -81,42 +99,38 @@
     "screenPageViews": 2
    },
    {
-    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Sticker formato S (10 x 10 cm) | Spreadshop",
+    "pageTitle": "Funziono a Caffè & Caos – Maglietta Divertente Felpa unisex | Spreadshop",
     "screenPageViews": 2
    },
    {
-    "pageTitle": "Design Tool | Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 1
+    "pageTitle": "Papà Taxi – Servizio Attivo 24h – Festa del Papà Felpa unisex | Spreadshop",
+    "screenPageViews": 2
    },
    {
-    "pageTitle": "Prodotti per bambini | Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 1
-   },
-   {
-    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Body Premium a maniche corte per neonati | Spreadshop",
-    "screenPageViews": 1
+    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Sticker formato S (10 x 10 cm) | Spreadshop",
+    "screenPageViews": 2
    }
   ],
   "eventi_7g": [
    {
     "eventName": "page_view",
-    "eventCount": 56
+    "eventCount": 70
    },
    {
     "eventName": "view_item",
-    "eventCount": 8
+    "eventCount": 15
    },
    {
     "eventName": "scroll",
-    "eventCount": 7
+    "eventCount": 12
    },
    {
     "eventName": "view_item_list",
-    "eventCount": 7
+    "eventCount": 9
    },
    {
     "eventName": "session_start",
-    "eventCount": 6
+    "eventCount": 8
    },
    {
     "eventName": "select_content",
@@ -162,6 +176,15 @@
     "impressions": 0,
     "ctr": 0,
     "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-20"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
    }
   ],
   "query": [],
@@ -175,5 +198,19 @@
    "pageFetchState": "SUCCESSFUL"
   }
  },
- "merchant": null
+ "merchant": {
+  "prodotti_totali": 892,
+  "stati": {
+   "ELIGIBLE": 730,
+   "PENDING": 111,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 51
+  },
+  "problemi_principali": {
+   "image_link_pending_crawl": 111,
+   "image_link_internal_error": 51
+  },
+  "prestazioni_per_giorno": {},
+  "clic_28g": 0,
+  "impressioni_28g": 0
+ }
 }

@@ -1,13 +1,13 @@
 {
- "aggiornato": "2026-11-21T21:45+01:00",
+ "aggiornato": "2026-11-22T21:44+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    34,
-    19
+    19,
+    11
    ],
    "page_views_total": [
     0,
@@ -28,13 +28,23 @@
   },
   "post": [
    {
+    "data": "2026-11-22T10:30:02+0000",
+    "testo": "🦖 ROAR! Festa a tema dinosauri in arrivo?\n\nLa maglietta del compleanno con l'età",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/122107463697547312/posts/122108913309547312",
+    "post_media_view": 8,
+    "post_clicks": 0
+   },
+   {
     "data": "2026-11-21T11:45:03+0000",
     "testo": "🦁 -25% su tutto il negozio Piccoli Ruggiti fino al 30 novembre!\n\nBody, magliette",
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122108020851547312",
-    "post_media_view": 5,
+    "post_media_view": 22,
     "post_clicks": 0
    },
    {
@@ -44,7 +54,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122107268355547312",
-    "post_media_view": 11,
+    "post_media_view": 19,
     "post_clicks": 0
    },
    {
@@ -54,7 +64,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105954343547312",
-    "post_media_view": 15,
+    "post_media_view": 16,
     "post_clicks": 0
    },
    {
@@ -64,7 +74,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/1476028767961265?substory_index=1476028767961265",
-    "post_media_view": 23,
+    "post_media_view": 24,
     "post_clicks": 0
    },
    {
@@ -74,7 +84,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122105354679547312?substory_index=1514383597220926",
-    "post_media_view": 11,
+    "post_media_view": 12,
     "post_clicks": 0
    },
    {
@@ -103,8 +113,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 4,
+  "post_totali": 5,
   "post": [
+   {
+    "data": "2026-11-22T10:30:05+0000",
+    "tipo": "FEED",
+    "testo": "🦖 ROAR! Festa a tema dinosauri in arrivo?\n\nLa maglietta del compleanno con l'età",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/p/DgCmB3DtmtH/",
+    "reach": 1,
+    "saved": 0,
+    "shares": 0,
+    "views": 3
+   },
    {
     "data": "2026-11-21T11:45:05+0000",
     "tipo": "FEED",
