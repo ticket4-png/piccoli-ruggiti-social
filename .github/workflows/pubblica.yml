@@ -38,6 +38,7 @@ jobs:
           GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
           MEDIA_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/media
           MEDIA_VIDEO_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/media
+          GH_TOKEN: ${{ github.token }}   # per lanciare il workflow delle statistiche ogni sera
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.verifica }}" = "true" ]; then
             python pubblica.py --verifica

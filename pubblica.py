@@ -289,14 +289,13 @@ def main():
         cal = carica(CALENDARIO, [])
         stato = carica(STATO, {})
         problemi = controlla_calendario(cal)
-        prossimo = prossima_uscita(cal, stato, problemi)
-        if prossimo is None:
-            print("Nessun altro contenuto in programma: fine.")
-            break
+        uscita = prossima_uscita(cal, stato, problemi)
+        stat = prossime_statistiche(stato)
+        prossimo = min(o for o in (uscita, stat) if o is not None)
         fine = inizio + DURATA_MASSIMA
         if prossimo > fine:
             resta = (fine - datetime.now(ROMA)).total_seconds()
-            print(f"Prossimo contenuto alle {prossimo:%d/%m %H:%M}: attendo fino a fine job ({resta/60:.0f} min), poi rilancio.", flush=True)
+            print(f"Prossimo evento alle {prossimo:%d/%m %H:%M}: attendo fino a fine job ({resta/60:.0f} min), poi rilancio.", flush=True)
             if resta > 0:
                 time.sleep(resta)
             break
@@ -308,11 +307,35 @@ def main():
         cal = carica(CALENDARIO, [])
         stato = carica(STATO, {})
         problemi = controlla_calendario(cal)
+        if datetime.now(ROMA) >= prossime_statistiche(stato):
+            lancia_statistiche(stato)
         ko += passaggio(cal, stato, problemi, page_id, ig_id)
         salva_git()
+    # resta sempre in catena: ogni sera lancia anche le statistiche
     with open(os.path.join(QUI, ".rilancia"), "w") as f:
-        f.write("si" if prossima_uscita(cal, stato, problemi) else "no")
+        f.write("si")
     return 1 if ko else 0
+
+
+ORA_STATISTICHE = (21, 15)   # il cron di GitHub delle statistiche parte spesso in ritardo: le lancia il bot
+
+
+def prossime_statistiche(stato):
+    adesso = datetime.now(ROMA)
+    oggi = adesso.replace(hour=ORA_STATISTICHE[0], minute=ORA_STATISTICHE[1], second=0, microsecond=0)
+    if stato.get("_statistiche") == adesso.strftime("%Y-%m-%d"):
+        return oggi + timedelta(days=1)
+    return oggi if adesso < oggi + timedelta(hours=2) else oggi + timedelta(days=1)
+
+
+def lancia_statistiche(stato):
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    r = subprocess.run(["gh", "workflow", "run", "statistiche.yml", "--ref", os.environ.get("GITHUB_REF_NAME", "main")],
+                       cwd=QUI, capture_output=True, text=True)
+    print("Statistiche lanciate" if r.returncode == 0 else f"Lancio statistiche non riuscito: {r.stderr[:300]}", flush=True)
+    stato["_statistiche"] = datetime.now(ROMA).strftime("%Y-%m-%d")
+    salva_stato(stato)
 
 
 def da_fare(v, stato):
