@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pubblica
+  group: statistiche   # separato dal bot di pubblicazione, che resta acceso fino a 5 h in attesa
   cancel-in-progress: false
 
 jobs:
