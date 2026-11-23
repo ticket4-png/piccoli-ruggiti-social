@@ -229,9 +229,27 @@ def controlla_calendario(cal):
     return problemi
 
 
+NEGOZIO_URL = "https://piccoli-ruggiti.myspreadshop.it/"
+
+
+def testo_per_facebook(v, testo):
+    """Su Facebook non c'è la "bio": al posto di "Link in bio" mette il link cliccabile
+    al negozio con i parametri UTM (così Google Analytics riconosce le visite da Facebook).
+    Se la voce ha "testo_facebook" usa quello."""
+    if v.get("testo_facebook"):
+        return v["testo_facebook"]
+    import re
+    campagna = re.sub(r"[^a-z0-9-]", "", v.get("id", "post").lower())[:60] or "post"
+    link = f"{NEGOZIO_URL}?utm_source=facebook&utm_medium=social&utm_campaign={campagna}"
+    testo = re.sub(r"\bdal link in bio", f"da qui: {link}", testo, flags=re.IGNORECASE)
+    return re.sub(r"link in bio", f"Negozio: {link}", testo, flags=re.IGNORECASE)
+
+
 def pubblica_voce(v, canale, page_id, ig_id):
     urls = [url_media(n) for n in v["immagini"]]
     testo = v.get("testo", "")
+    if canale == "facebook":
+        testo = testo_per_facebook(v, testo)
     if canale == "instagram":
         if not ig_id:
             raise ErroreMeta("nessun account Instagram collegato alla Pagina")
