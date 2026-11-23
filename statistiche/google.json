@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-22T21:45+01:00",
+ "aggiornato": "2026-11-23T01:56+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -199,14 +199,14 @@
   }
  },
  "merchant": {
-  "prodotti_totali": 892,
+  "prodotti_totali": 1480,
   "stati": {
-   "ELIGIBLE": 730,
-   "PENDING": 111,
+   "ELIGIBLE": 1313,
+   "PENDING": 116,
    "NOT_ELIGIBLE_OR_DISAPPROVED": 51
   },
   "problemi_principali": {
-   "image_link_pending_crawl": 111,
+   "image_link_pending_crawl": 116,
    "image_link_internal_error": 51
   },
   "prestazioni_per_giorno": {},
