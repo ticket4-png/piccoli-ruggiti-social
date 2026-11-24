@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-23T21:15+01:00",
+ "aggiornato": "2026-11-24T05:49+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -45,10 +45,6 @@
    {
     "city": "Rome",
     "activeUsers": 2
-   },
-   {
-    "city": "",
-    "activeUsers": 1
    },
    {
     "city": "(not set)",
@@ -210,13 +206,13 @@
  "merchant": {
   "prodotti_totali": 1480,
   "stati": {
-   "ELIGIBLE": 1314,
+   "ELIGIBLE": 1348,
    "PENDING": 113,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 53
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 19
   },
   "problemi_principali": {
    "image_link_pending_crawl": 113,
-   "image_link_internal_error": 53
+   "image_link_internal_error": 19
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,
