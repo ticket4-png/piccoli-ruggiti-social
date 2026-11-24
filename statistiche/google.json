@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-24T05:49+01:00",
+ "aggiornato": "2026-11-24T21:15+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -190,6 +190,15 @@
     "impressions": 0,
     "ctr": 0,
     "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-22"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
    }
   ],
   "query": [],
@@ -206,13 +215,13 @@
  "merchant": {
   "prodotti_totali": 1480,
   "stati": {
-   "ELIGIBLE": 1348,
-   "PENDING": 113,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 19
+   "ELIGIBLE": 1357,
+   "PENDING": 112,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 11
   },
   "problemi_principali": {
-   "image_link_pending_crawl": 113,
-   "image_link_internal_error": 19
+   "image_link_pending_crawl": 112,
+   "image_link_internal_error": 11
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,

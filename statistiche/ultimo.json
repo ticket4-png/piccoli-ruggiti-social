@@ -1,17 +1,17 @@
 {
- "aggiornato": "2026-11-24T05:49+01:00",
+ "aggiornato": "2026-11-24T21:15+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    11,
-    29
+    29,
+    31
    ],
    "page_views_total": [
     0,
-    0
+    3
    ],
    "page_post_engagements": [
     0,
@@ -28,13 +28,23 @@
   },
   "post": [
    {
+    "data": "2026-11-24T11:46:11+0000",
+    "testo": "Per la mamma che ha tutto tranne il sonno ☕ \"Mamma di maschi\" e \"Funziono a caff",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/122107463697547312/posts/122110072833547312",
+    "post_media_view": 3,
+    "post_clicks": 0
+   },
+   {
     "data": "2026-11-22T10:30:02+0000",
     "testo": "🦖 ROAR! Festa a tema dinosauri in arrivo?\n\nLa maglietta del compleanno con l'età",
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122108913309547312",
-    "post_media_view": 9,
+    "post_media_view": 11,
     "post_clicks": 0
    },
    {
@@ -44,7 +54,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122108020851547312",
-    "post_media_view": 23,
+    "post_media_view": 24,
     "post_clicks": 0
    },
    {
@@ -113,8 +123,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 5,
+  "post_totali": 6,
   "post": [
+   {
+    "data": "2026-11-24T11:45:56+0000",
+    "tipo": "FEED",
+    "testo": "Per la mamma che ha tutto tranne il sonno ☕ \"Mamma di maschi\" e \"Funziono a caff",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/p/DgH4SPpkmXZ/",
+    "reach": 1,
+    "saved": 0,
+    "shares": 0,
+    "views": 3
+   },
    {
     "data": "2026-11-22T10:30:05+0000",
     "tipo": "FEED",
