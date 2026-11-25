@@ -1,0 +1,9 @@
+[
+ {
+  "id": "leoncino-ruggito-1",
+  "immagine": "media/veo/leoncino-start.png",
+  "prompt": "Animate this cute flat 2D cartoon lion cub mascot. Keep exactly the same character design, flat colors and cream background, no 3D, no realism. The cub blinks, wiggles its ears, takes a breath and does a tiny adorable roar with its mane puffing out; a few small golden sparkles pop around it. Gentle slow camera push-in. No text, no letters, no people. Audio: a very small cute cub roar followed by a soft playful ukulele jingle.",
+  "secondi": 8,
+  "audio": true
+ }
+]
