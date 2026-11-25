@@ -1,0 +1,50 @@
+name: Genera video (Veo)
+
+on:
+  workflow_dispatch:
+    inputs:
+      verifica:
+        description: "Solo verifica credenziali (non genera e non spende)"
+        type: boolean
+        default: true
+  push:
+    branches: [main]
+    paths: [video_richieste.json]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  genera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests google-auth
+      - name: Genera
+        env:
+          GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+          MAX_CLIP_PER_ESECUZIONE: "3"
+          BUDGET_SECONDI_MESE: "120"
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.verifica }}" = "true" ]; then
+            python genera_video.py --verifica
+          else
+            python genera_video.py
+          fi
+      - name: Salva
+        if: always()
+        run: |
+          git config user.name "piccoli-ruggiti-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add video_stato.json media/generati 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Niente da salvare"; exit 0; fi
+          git commit -m "video generati $(date -u +%d/%m)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 5; done
