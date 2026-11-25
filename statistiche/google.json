@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-24T21:15+01:00",
+ "aggiornato": "2026-11-25T04:34+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -32,13 +32,19 @@
     "activeUsers": 1,
     "sessions": 1,
     "screenPageViews": 13
+   },
+   {
+    "date": "20261124",
+    "activeUsers": 1,
+    "sessions": 1,
+    "screenPageViews": 8
    }
   ],
   "sorgenti_7g": [
    {
     "sessionSourceMedium": "(direct) / (none)",
-    "sessions": 8,
-    "activeUsers": 3
+    "sessions": 9,
+    "activeUsers": 4
    }
   ],
   "citta_7g": [
@@ -57,26 +63,38 @@
    {
     "city": "Salerno",
     "activeUsers": 1
+   },
+   {
+    "city": "Verona",
+    "activeUsers": 1
    }
   ],
   "dispositivi_7g": [
    {
     "deviceCategory": "desktop",
     "activeUsers": 3
+   },
+   {
+    "deviceCategory": "mobile",
+    "activeUsers": 1
    }
   ],
   "pagine_7g": [
    {
     "pageTitle": "Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 30
+    "screenPageViews": 34
    },
    {
     "pageTitle": "tracking iframe for shop 1597242",
-    "screenPageViews": 17
+    "screenPageViews": 18
    },
    {
     "pageTitle": "My First Christmas 2026 – Baby's First Christmas Body ecologico per neonato a manica lunga | Spreadshop",
     "screenPageViews": 5
+   },
+   {
+    "pageTitle": "Bambini e neonati | Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 4
    },
    {
     "pageTitle": "Mamma di Maschi – Modalità Sopravvivenza ON Felpa unisex | Spreadshop",
@@ -84,10 +102,6 @@
    },
    {
     "pageTitle": "Adesivi | Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 2
-   },
-   {
-    "pageTitle": "Bambini e neonati | Piccoli Ruggiti | Spreadshop",
     "screenPageViews": 2
    },
    {
@@ -110,7 +124,7 @@
   "eventi_7g": [
    {
     "eventName": "page_view",
-    "eventCount": 70
+    "eventCount": 78
    },
    {
     "eventName": "view_item",
@@ -118,23 +132,23 @@
    },
    {
     "eventName": "scroll",
-    "eventCount": 12
+    "eventCount": 13
    },
    {
     "eventName": "view_item_list",
-    "eventCount": 9
+    "eventCount": 12
    },
    {
     "eventName": "session_start",
-    "eventCount": 8
+    "eventCount": 9
+   },
+   {
+    "eventName": "first_visit",
+    "eventCount": 4
    },
    {
     "eventName": "select_content",
     "eventCount": 4
-   },
-   {
-    "eventName": "first_visit",
-    "eventCount": 3
    }
   ]
  },
@@ -213,15 +227,15 @@
   }
  },
  "merchant": {
-  "prodotti_totali": 1480,
+  "prodotti_totali": 1556,
   "stati": {
-   "ELIGIBLE": 1357,
-   "PENDING": 112,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 11
+   "ELIGIBLE": 1548,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 4,
+   "PENDING": 4
   },
   "problemi_principali": {
-   "image_link_pending_crawl": 112,
-   "image_link_internal_error": 11
+   "image_link_internal_error": 4,
+   "image_link_pending_crawl": 4
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,
