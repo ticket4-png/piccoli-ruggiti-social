@@ -1,0 +1,14 @@
+{
+ "mesi": {
+  "2026-11": 8
+ },
+ "clip": {
+  "leoncino-ruggito-1": {
+   "esito": "ok",
+   "file": "media/generati/leoncino-ruggito-1.mp4",
+   "modello": "veo-3.1-fast-generate-001",
+   "secondi": 8,
+   "alle": "2026-11-25T19:19+00:00"
+  }
+ }
+}
