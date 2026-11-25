@@ -1,17 +1,17 @@
 {
- "aggiornato": "2026-11-25T04:33+01:00",
+ "aggiornato": "2026-11-25T21:15+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    29,
-    31
+    31,
+    2
    ],
    "page_views_total": [
-    0,
-    3
+    3,
+    0
    ],
    "page_post_engagements": [
     0,
@@ -27,6 +27,16 @@
    ]
   },
   "post": [
+   {
+    "data": "2026-11-25T17:31:06+0000",
+    "testo": "Il suo primo Natale arriva una volta sola 🎄 Body \"Il mio primo Natale 2026\" a -2",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/reel/1657355849172313/",
+    "post_media_view": 0,
+    "post_clicks": 0
+   },
    {
     "data": "2026-11-24T11:46:11+0000",
     "testo": "Per la mamma che ha tutto tranne il sonno ☕ \"Mamma di maschi\" e \"Funziono a caff",
@@ -123,8 +133,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 6,
+  "post_totali": 7,
   "post": [
+   {
+    "data": "2026-11-25T17:30:35+0000",
+    "tipo": "REELS",
+    "testo": "Il suo primo Natale arriva una volta sola 🎄 Body \"Il mio primo Natale 2026\" a -2",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/reel/DgLEfBzBNBe/",
+    "reach": 1,
+    "saved": 0,
+    "shares": 0,
+    "views": 1
+   },
    {
     "data": "2026-11-24T11:45:56+0000",
     "tipo": "FEED",

@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-25T04:34+01:00",
+ "aggiornato": "2026-11-25T21:15+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -213,6 +213,15 @@
     "impressions": 0,
     "ctr": 0,
     "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-23"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
    }
   ],
   "query": [],
@@ -230,12 +239,12 @@
   "prodotti_totali": 1556,
   "stati": {
    "ELIGIBLE": 1548,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 4,
-   "PENDING": 4
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 5,
+   "PENDING": 3
   },
   "problemi_principali": {
-   "image_link_internal_error": 4,
-   "image_link_pending_crawl": 4
+   "image_link_internal_error": 5,
+   "image_link_pending_crawl": 3
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,
