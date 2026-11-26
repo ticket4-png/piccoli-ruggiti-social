@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26T03:52+01:00",
+ "aggiornato": "2026-11-26T21:15+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -44,22 +44,28 @@
     "activeUsers": 1,
     "sessions": 1,
     "screenPageViews": 43
+   },
+   {
+    "date": "20261126",
+    "activeUsers": 1,
+    "sessions": 1,
+    "screenPageViews": 20
    }
   ],
   "sorgenti_7g": [
    {
     "sessionSourceMedium": "(direct) / (none)",
-    "sessions": 7,
+    "sessions": 8,
     "activeUsers": 3
    }
   ],
   "citta_7g": [
    {
-    "city": "(not set)",
-    "activeUsers": 1
+    "city": "Formello",
+    "activeUsers": 2
    },
    {
-    "city": "Formello",
+    "city": "(not set)",
     "activeUsers": 1
    },
    {
@@ -87,12 +93,12 @@
   ],
   "pagine_7g": [
    {
-    "pageTitle": "tracking iframe for shop 1597242",
-    "screenPageViews": 22
+    "pageTitle": "Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 30
    },
    {
-    "pageTitle": "Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 16
+    "pageTitle": "tracking iframe for shop 1597242",
+    "screenPageViews": 28
    },
    {
     "pageTitle": "Promosso Nonno 2027 – Annuncio Gravidanza ai Nonni Felpa unisex | Spreadshop",
@@ -130,7 +136,7 @@
   "eventi_7g": [
    {
     "eventName": "page_view",
-    "eventCount": 77
+    "eventCount": 97
    },
    {
     "eventName": "view_item",
@@ -138,15 +144,15 @@
    },
    {
     "eventName": "scroll",
-    "eventCount": 22
-   },
-   {
-    "eventName": "session_start",
-    "eventCount": 7
+    "eventCount": 28
    },
    {
     "eventName": "view_item_list",
-    "eventCount": 7
+    "eventCount": 19
+   },
+   {
+    "eventName": "session_start",
+    "eventCount": 8
    },
    {
     "eventName": "first_visit",
@@ -224,6 +230,15 @@
     "impressions": 0,
     "ctr": 0,
     "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-24"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
    }
   ],
   "query": [],
@@ -240,12 +255,12 @@
  "merchant": {
   "prodotti_totali": 1940,
   "stati": {
-   "ELIGIBLE": 1912,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 2,
-   "PENDING": 26
+   "ELIGIBLE": 1913,
+   "PENDING": 25,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 2
   },
   "problemi_principali": {
-   "image_link_pending_crawl": 26,
+   "image_link_pending_crawl": 25,
    "image_link_internal_error": 2
   },
   "prestazioni_per_giorno": {},

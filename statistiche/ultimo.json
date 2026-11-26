@@ -1,16 +1,16 @@
 {
- "aggiornato": "2026-11-26T03:52+01:00",
+ "aggiornato": "2026-11-26T21:15+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    31,
-    2
+    2,
+    15
    ],
    "page_views_total": [
-    3,
+    0,
     0
    ],
    "page_post_engagements": [
@@ -27,6 +27,16 @@
    ]
   },
   "post": [
+   {
+    "data": "2026-11-26T11:46:16+0000",
+    "testo": "Regali di Natale per tutta la famiglia 🎁 Neonato, fratellone, sorellona, complea",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/122107463697547312/posts/122111107995547312",
+    "post_media_view": 0,
+    "post_clicks": 0
+   },
    {
     "data": "2026-11-25T17:31:06+0000",
     "testo": "Il suo primo Natale arriva una volta sola 🎄 Body \"Il mio primo Natale 2026\" a -2",
@@ -133,8 +143,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 7,
+  "post_totali": 8,
   "post": [
+   {
+    "data": "2026-11-26T11:46:00+0000",
+    "tipo": "FEED",
+    "testo": "Regali di Natale per tutta la famiglia 🎁 Neonato, fratellone, sorellona, complea",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/p/DgNB4W-jf47/",
+    "reach": 1,
+    "saved": 0,
+    "shares": 0,
+    "views": 4
+   },
    {
     "data": "2026-11-25T17:30:35+0000",
     "tipo": "REELS",
