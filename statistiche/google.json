@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-25T21:15+01:00",
+ "aggiornato": "2026-11-26T03:52+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -38,26 +38,32 @@
     "activeUsers": 1,
     "sessions": 1,
     "screenPageViews": 8
+   },
+   {
+    "date": "20261125",
+    "activeUsers": 1,
+    "sessions": 1,
+    "screenPageViews": 43
    }
   ],
   "sorgenti_7g": [
    {
     "sessionSourceMedium": "(direct) / (none)",
-    "sessions": 9,
-    "activeUsers": 4
+    "sessions": 7,
+    "activeUsers": 3
    }
   ],
   "citta_7g": [
-   {
-    "city": "Rome",
-    "activeUsers": 2
-   },
    {
     "city": "(not set)",
     "activeUsers": 1
    },
    {
-    "city": "Milan",
+    "city": "Formello",
+    "activeUsers": 1
+   },
+   {
+    "city": "Rome",
     "activeUsers": 1
    },
    {
@@ -72,7 +78,7 @@
   "dispositivi_7g": [
    {
     "deviceCategory": "desktop",
-    "activeUsers": 3
+    "activeUsers": 2
    },
    {
     "deviceCategory": "mobile",
@@ -81,19 +87,35 @@
   ],
   "pagine_7g": [
    {
-    "pageTitle": "Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 34
-   },
-   {
     "pageTitle": "tracking iframe for shop 1597242",
-    "screenPageViews": 18
+    "screenPageViews": 22
    },
    {
-    "pageTitle": "My First Christmas 2026 – Baby's First Christmas Body ecologico per neonato a manica lunga | Spreadshop",
+    "pageTitle": "Piccoli Ruggiti | Spreadshop",
+    "screenPageViews": 16
+   },
+   {
+    "pageTitle": "Promosso Nonno 2027 – Annuncio Gravidanza ai Nonni Felpa unisex | Spreadshop",
+    "screenPageViews": 6
+   },
+   {
+    "pageTitle": "Promossa Zia 2027 – Annuncio Gravidanza Zia Felpa unisex | Spreadshop",
     "screenPageViews": 5
    },
    {
-    "pageTitle": "Bambini e neonati | Piccoli Ruggiti | Spreadshop",
+    "pageTitle": "Promosso Papà 2027 – Annuncio Gravidanza Papà Felpa unisex | Spreadshop",
+    "screenPageViews": 5
+   },
+   {
+    "pageTitle": "Promossa Mamma 2027 – Annuncio Gravidanza Mamma Felpa unisex | Spreadshop",
+    "screenPageViews": 4
+   },
+   {
+    "pageTitle": "Promossa Nonna 2027 – Annuncio Gravidanza ai Nonni Felpa unisex | Spreadshop",
+    "screenPageViews": 4
+   },
+   {
+    "pageTitle": "Promosso Zio 2027 – Annuncio Gravidanza Zio Felpa unisex | Spreadshop",
     "screenPageViews": 4
    },
    {
@@ -101,54 +123,34 @@
     "screenPageViews": 3
    },
    {
-    "pageTitle": "Adesivi | Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 2
-   },
-   {
-    "pageTitle": "Casa & Vita | Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 2
-   },
-   {
-    "pageTitle": "Funziono a Caffè & Caos – Maglietta Divertente Felpa unisex | Spreadshop",
-    "screenPageViews": 2
-   },
-   {
-    "pageTitle": "Papà Taxi – Servizio Attivo 24h – Festa del Papà Felpa unisex | Spreadshop",
-    "screenPageViews": 2
-   },
-   {
-    "pageTitle": "Roar I'm 1 – Dinosaur First Birthday Shirt Sticker formato S (10 x 10 cm) | Spreadshop",
+    "pageTitle": "Bambini e neonati | Piccoli Ruggiti | Spreadshop",
     "screenPageViews": 2
    }
   ],
   "eventi_7g": [
    {
     "eventName": "page_view",
-    "eventCount": 78
+    "eventCount": 77
    },
    {
     "eventName": "view_item",
-    "eventCount": 15
+    "eventCount": 35
    },
    {
     "eventName": "scroll",
-    "eventCount": 13
-   },
-   {
-    "eventName": "view_item_list",
-    "eventCount": 12
+    "eventCount": 22
    },
    {
     "eventName": "session_start",
-    "eventCount": 9
+    "eventCount": 7
+   },
+   {
+    "eventName": "view_item_list",
+    "eventCount": 7
    },
    {
     "eventName": "first_visit",
-    "eventCount": 4
-   },
-   {
-    "eventName": "select_content",
-    "eventCount": 4
+    "eventCount": 1
    }
   ]
  },
@@ -236,15 +238,15 @@
   }
  },
  "merchant": {
-  "prodotti_totali": 1556,
+  "prodotti_totali": 1940,
   "stati": {
-   "ELIGIBLE": 1548,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 5,
-   "PENDING": 3
+   "ELIGIBLE": 1912,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 2,
+   "PENDING": 26
   },
   "problemi_principali": {
-   "image_link_internal_error": 5,
-   "image_link_pending_crawl": 3
+   "image_link_pending_crawl": 26,
+   "image_link_internal_error": 2
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,
