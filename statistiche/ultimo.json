@@ -1,13 +1,13 @@
 {
- "aggiornato": "2026-11-27T03:52+01:00",
+ "aggiornato": "2026-11-27T21:15+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    2,
-    15
+    15,
+    0
    ],
    "page_views_total": [
     0,
@@ -28,13 +28,23 @@
   },
   "post": [
    {
+    "data": "2026-11-27T17:31:19+0000",
+    "testo": "Black Friday: -25% su tutto fino al 30 novembre 🖤 Body, magliette e felpe per bi",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/122107463697547312/posts/122111730651547312",
+    "post_media_view": 0,
+    "post_clicks": 0
+   },
+   {
     "data": "2026-11-26T11:46:16+0000",
     "testo": "Regali di Natale per tutta la famiglia 🎁 Neonato, fratellone, sorellona, complea",
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122111107995547312",
-    "post_media_view": 0,
+    "post_media_view": 1,
     "post_clicks": 0
    },
    {
@@ -143,8 +153,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 8,
+  "post_totali": 9,
   "post": [
+   {
+    "data": "2026-11-27T17:31:02+0000",
+    "tipo": "FEED",
+    "testo": "Black Friday: -25% su tutto fino al 30 novembre 🖤 Body, magliette e felpe per bi",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/p/DgQOJ-ojkRF/",
+    "reach": 0,
+    "saved": 0,
+    "shares": 0,
+    "views": 0
+   },
    {
     "data": "2026-11-26T11:46:00+0000",
     "tipo": "FEED",

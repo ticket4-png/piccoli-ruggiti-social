@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-27T03:52+01:00",
+ "aggiornato": "2026-11-27T21:15+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -230,6 +230,15 @@
    {
     "keys": [
      "2026-11-24"
+    ],
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+   },
+   {
+    "keys": [
+     "2026-11-25"
     ],
     "clicks": 0,
     "impressions": 0,
