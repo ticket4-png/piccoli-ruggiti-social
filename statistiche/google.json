@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26T21:15+01:00",
+ "aggiornato": "2026-11-27T03:52+01:00",
  "avvisi": [],
  "analytics": {
   "per_giorno": [
@@ -55,7 +55,7 @@
   "sorgenti_7g": [
    {
     "sessionSourceMedium": "(direct) / (none)",
-    "sessions": 8,
+    "sessions": 7,
     "activeUsers": 3
    }
   ],
@@ -66,10 +66,6 @@
    },
    {
     "city": "(not set)",
-    "activeUsers": 1
-   },
-   {
-    "city": "Rome",
     "activeUsers": 1
    },
    {
@@ -94,11 +90,11 @@
   "pagine_7g": [
    {
     "pageTitle": "Piccoli Ruggiti | Spreadshop",
-    "screenPageViews": 30
+    "screenPageViews": 27
    },
    {
     "pageTitle": "tracking iframe for shop 1597242",
-    "screenPageViews": 28
+    "screenPageViews": 27
    },
    {
     "pageTitle": "Promosso Nonno 2027 – Annuncio Gravidanza ai Nonni Felpa unisex | Spreadshop",
@@ -136,7 +132,7 @@
   "eventi_7g": [
    {
     "eventName": "page_view",
-    "eventCount": 97
+    "eventCount": 93
    },
    {
     "eventName": "view_item",
@@ -144,7 +140,7 @@
    },
    {
     "eventName": "scroll",
-    "eventCount": 28
+    "eventCount": 27
    },
    {
     "eventName": "view_item_list",
@@ -152,7 +148,7 @@
    },
    {
     "eventName": "session_start",
-    "eventCount": 8
+    "eventCount": 7
    },
    {
     "eventName": "first_visit",
@@ -255,13 +251,13 @@
  "merchant": {
   "prodotti_totali": 1940,
   "stati": {
-   "ELIGIBLE": 1913,
-   "PENDING": 25,
-   "NOT_ELIGIBLE_OR_DISAPPROVED": 2
+   "ELIGIBLE": 1915,
+   "PENDING": 14,
+   "NOT_ELIGIBLE_OR_DISAPPROVED": 11
   },
   "problemi_principali": {
-   "image_link_pending_crawl": 25,
-   "image_link_internal_error": 2
+   "image_link_pending_crawl": 14,
+   "image_link_internal_error": 11
   },
   "prestazioni_per_giorno": {},
   "clic_28g": 0,
