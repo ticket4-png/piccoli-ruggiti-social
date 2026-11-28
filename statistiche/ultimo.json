@@ -1,12 +1,12 @@
 {
- "aggiornato": "2026-11-28T03:43+01:00",
+ "aggiornato": "2026-11-28T21:15+01:00",
  "facebook": {
   "pagina": "Piccoli Ruggiti",
   "follower": 0,
   "mi_piace": 0,
   "insights": {
    "page_media_view": [
-    15,
+    0,
     0
    ],
    "page_views_total": [
@@ -28,13 +28,23 @@
   },
   "post": [
    {
+    "data": "2026-11-28T17:31:13+0000",
+    "testo": "Ciao, sono il leoncino di Piccoli Ruggiti! 🦁 Ruggisco forte per dirti che c'è il",
+    "reazioni": 0,
+    "commenti": 0,
+    "condivisioni": 0,
+    "link": "https://www.facebook.com/reel/1182101511425290/",
+    "post_media_view": 0,
+    "post_clicks": 0
+   },
+   {
     "data": "2026-11-27T17:31:19+0000",
     "testo": "Black Friday: -25% su tutto fino al 30 novembre 🖤 Body, magliette e felpe per bi",
     "reazioni": 0,
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122111730651547312",
-    "post_media_view": 1,
+    "post_media_view": 3,
     "post_clicks": 0
    },
    {
@@ -44,7 +54,7 @@
     "commenti": 0,
     "condivisioni": 0,
     "link": "https://www.facebook.com/122107463697547312/posts/122111107995547312",
-    "post_media_view": 2,
+    "post_media_view": 4,
     "post_clicks": 0
    },
    {
@@ -153,8 +163,20 @@
   "account": "piccoliruggiti",
   "follower": 1,
   "seguiti": 0,
-  "post_totali": 9,
+  "post_totali": 10,
   "post": [
+   {
+    "data": "2026-11-28T17:30:39+0000",
+    "tipo": "REELS",
+    "testo": "Ciao, sono il leoncino di Piccoli Ruggiti! 🦁 Ruggisco forte per dirti che c'è il",
+    "like": 0,
+    "commenti": 0,
+    "link": "https://www.instagram.com/reel/DgSy319CqBo/",
+    "reach": 1,
+    "saved": 0,
+    "shares": 0,
+    "views": 1
+   },
    {
     "data": "2026-11-27T17:31:02+0000",
     "tipo": "FEED",
